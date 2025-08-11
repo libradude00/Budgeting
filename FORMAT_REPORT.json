@@ -1,0 +1,49 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "checks": [
+        "Markdown normalized"
+      ]
+    },
+    {
+      "path": "budget.html",
+      "checks": [
+        "HTML prettified with BeautifulSoup.prettify()",
+        "Inline scripts found \u2014 reviewed during formatting but ensure no accidental removals"
+      ]
+    },
+    {
+      "path": "index.html",
+      "checks": [
+        "HTML prettified with BeautifulSoup.prettify()",
+        "Inline scripts found \u2014 reviewed during formatting but ensure no accidental removals"
+      ]
+    },
+    {
+      "path": "style.css",
+      "checks": [
+        "CSS reformatted with simple regex heuristics"
+      ]
+    },
+    {
+      "path": ".gitignore",
+      "checks": [
+        "Created .gitignore"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "file": "global",
+      "issue": "Canvas element with id 'myChart' not found in HTML files."
+    }
+  ],
+  "files_listed": [
+    "README.md",
+    "budget.html",
+    "index.html",
+    "style.css"
+  ],
+  "zip": "/mnt/data/Budget-formatted-for-github.zip"
+}
