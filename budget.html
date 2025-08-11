@@ -18,7 +18,7 @@
     th { background:#2b6cb0; color:white; }
     input[type="text"], input[type="number"] { width:100%; box-sizing:border-box; padding:6px; }
     button { padding:8px 12px; }
-    #chart-wrap { width:420px; margin:20px auto; }
+    #chart-wrap { width:420px; margin:20px auto;  height: 400px;}
     .leftover { font-weight:700; text-align:center; margin-top:8px; }
     .over { color:red; }
     .positive { color:green; }
@@ -155,7 +155,10 @@ const unnecessaryKeywords = {
 
 /* ---------- Chart setup ---------- */
 const ctx = document.getElementById('budgetChart').getContext('2d');
-const chart = new Chart(ctx, { type:'pie', data:{labels:[], datasets:[{data:[], backgroundColor:[]}]}, options:{responsive:true, plugins:{legend:{position:'bottom'}}} });
+const chart = new Chart(ctx, { type:'pie', data:{labels:[], datasets:[{data:[], backgroundColor:[]}]}, options:{
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: { duration: 0 },responsive:true, plugins:{legend:{position:'bottom'}}} });
 
 /* ---------- Helpers ---------- */
 function randColor(){ return '#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0'); }
