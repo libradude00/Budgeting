@@ -155,10 +155,7 @@ const unnecessaryKeywords = {
 
 /* ---------- Chart setup ---------- */
 const ctx = document.getElementById('budgetChart').getContext('2d');
-const chart = new Chart(ctx, { type:'pie', data:{labels:[], datasets:[{data:[], backgroundColor:[]}]}, options:{
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 0 },responsive:true, plugins:{legend:{position:'bottom'}}} });
+const chart = new Chart(ctx, { type:'pie', data:{labels:[], datasets:[{data:[], backgroundColor:[]}]}, options:{responsive:true, plugins:{legend:{position:'bottom'}}} });
 
 /* ---------- Helpers ---------- */
 function randColor(){ return '#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0'); }
@@ -337,8 +334,7 @@ function updateAll(){
     suggestionsPanel.style.display = 'none';
     // clear suggestedCut in table cells
     expenses.forEach(e=> e.suggestedCut = 0);
-    renderTable();
-  }
+    /* renderTable() removed to preserve input focus */}
 }
 
 /* ---------- Render suggestions ---------- */
@@ -352,8 +348,7 @@ function renderSuggestions(s){
   // mark suggested cuts in expenses data and in table
   expenses.forEach(e => e.suggestedCut = 0);
   s.candidates.forEach(c=> { expenses[c.index].suggestedCut = c.suggestedCut || 0; });
-  renderTable();
-  // highlight rows and show details
+  /* renderTable() removed to preserve input focus */// highlight rows and show details
   s.candidates.forEach(c=>{
     const div = document.createElement('div');
     div.className = 'suggestion';
